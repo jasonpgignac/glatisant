@@ -1,0 +1,36 @@
+{
+  "name": "glatisant",
+  "version": "0.0.1",
+  "description": "Questing App for use to encourage engagement with github repositories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonpgignac/glatisant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonpgignac/glatisant/issues"
+  },
+  "homepage": "https://github.com/jasonpgignac/glatisant#readme",
+  "dependencies": {
+    "browserify": "^14.4.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.1",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "source-map-loader": "^0.2.1",
+    "watch": "^1.0.2",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}

@@ -1,0 +1,8 @@
+.Logo {
+    background-image: url('../../images/glatistant-logo.jpg');
+    background-size: cover;
+    display: inline-block;
+    height: 50px;
+    vertical-align: middle;
+    width: 50px;
+}
