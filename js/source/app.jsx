@@ -5,7 +5,7 @@ import Logo from './components/Logo';
 
 ReactDOM.render (
     <h1>
-        <Logo />Welcome to the App!
+        <Logo />Welcome to Glatisant
     </h1>,
     document.getElementById('app')
 );

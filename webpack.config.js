@@ -5,7 +5,8 @@ module.exports = {
 
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: __dirname + "/dist",
+        publicPath: '/dist'
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -27,5 +28,7 @@ module.exports = {
 
         disableHostCheck: true,   // That solved it
 
-    },      
+    },
+    
+    watch: true,
 };
