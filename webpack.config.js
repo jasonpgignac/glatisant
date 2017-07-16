@@ -1,11 +1,11 @@
 //import path from 'path';
 
 module.exports = {
-    entry: "./js/source/app.jsx",
+    entry: './source/js/app.jsx',
 
     output: {
-        filename: "bundle.js",
-        path: __dirname + "/dist",
+        filename: 'bundle.js',
+        path: __dirname + '/dist',
         publicPath: '/dist'
     },
 
@@ -13,21 +13,26 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
-        extensions: [".jsx", ".js", ".json"]
+        extensions: ['.jsx', '.js', '.json', '.css', '.styl', '.jpg']
     },
 
     module: {
         rules: [
-            { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', options: { presets:['es2015', 'react'] } },
+            { test: /\.jsx$/, exclude: /node_modules/, loader: 'eslint-loader', enforce: 'pre', options: { emitError: true, emitWarning: false } },
+
+            { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader', options: { presets:['es2015', 'react'] } },
+            
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+
+			{ test: /\.styl$/, loader: "style-loader!css-loader!stylus-loader"},
+			
+			{ test: /\.jpg$/, loader: 'file-loader'},
         ]
     },
     
     devServer: {
-
         compress: true,
-
-        disableHostCheck: true,   // That solved it
-
+        disableHostCheck: true,
     },
     
     watch: true,
