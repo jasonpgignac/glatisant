@@ -21,7 +21,8 @@
     "core-js": "^2.4.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-modal-dialog": "^4.0.7"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.2.1",
@@ -42,7 +43,6 @@
     "jshint": "^2.9.5",
     "jshint-loader": "^0.8.4",
     "node-libs-browser": "^2.0.0",
-    "prop-types": "^15.5.10",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
