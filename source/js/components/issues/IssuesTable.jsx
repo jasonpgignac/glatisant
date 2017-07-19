@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IssueDetail from './IssueDetail';
+import GithubPropTypes from '../../githubPropTypes';
 
 function truncateField(field, length) {
   return field.length <= length ? field
@@ -44,9 +45,12 @@ class IssuesTable extends React.PureComponent {
                 </div>
                 <div>{issue.status}</div>
                 <div>{issue.title}</div>
-                <div>{issue.creator}</div>
+                <div>
+                  <img className="issueCreatorGravatar" alt={`avatar for ${issue.user.login}`} src={issue.user.avatar_url} />
+                  <span>{issue.user.login}</span>
+                </div>
               </div>
-              <div className="issuesummary">{truncateField(issue.summary, 140)}</div>
+              <div className="issuesummary">{truncateField(issue.body, 140)}</div>
             </article>
           ))
         }
@@ -56,13 +60,7 @@ class IssuesTable extends React.PureComponent {
 }
 
 IssuesTable.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    creator: PropTypes.string,
-    status: PropTypes.string,
-    summary: PropTypes.string,
-  })),
+  data: PropTypes.arrayOf(GithubPropTypes.issue),
   readIssues: PropTypes.func.isRequired,
 };
 

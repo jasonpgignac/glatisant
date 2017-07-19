@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import IssuesTable from './IssuesTable';
-import { readIssues } from '../../model/actions';
+import { fetchIssues } from '../../model/actions';
 
-const mapStateToProps = state => ({ data: state.issues });
+const mapStateToProps = state => ({ data: state.issues.items });
 
 const mapDispatchToProps = dispatch => ({
-  readIssues: () => { dispatch(readIssues()); },
+  readIssues: () => { dispatch(fetchIssues()); },
 });
 
 const VisibleIssuesTable = connect(mapStateToProps, mapDispatchToProps)(IssuesTable);

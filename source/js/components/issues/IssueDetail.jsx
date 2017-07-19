@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ModalContainer, ModalDialog } from 'react-modal-dialog';
 
+import GithubPropTypes from '../../githubPropTypes';
 
 class IssueDetail extends React.PureComponent {
   render() {
@@ -17,7 +18,14 @@ class IssueDetail extends React.PureComponent {
               <article>
                 <section className="issue-detail-user">
                   <div className="label">Creator</div>
-                  <div>{this.props.issue.creator}</div>
+                  <div>
+                    <img
+                      className="issue-detail-user-avatar"
+                      src={this.props.issue.user.avatar_url}
+                      alt={`Avatar for user ${this.props.issue.user.login}`}
+                    />
+                    { this.props.issue.user.login }
+                  </div>
                 </section>
                 <section className="issue-detail-status">
                   <div className="label">Status</div>
@@ -25,7 +33,7 @@ class IssueDetail extends React.PureComponent {
                 </section>
                 <section className="issue-detail-summary">
                   <div className="label">Summary</div>
-                  <div>{this.props.issue.summary}</div>
+                  <div>{this.props.issue.body}</div>
                 </section>
               </article>
             </div>
@@ -39,13 +47,7 @@ class IssueDetail extends React.PureComponent {
 
 IssueDetail.propTypes = {
   show: PropTypes.bool,
-  issue: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    creator: PropTypes.string,
-    status: PropTypes.string,
-    summary: PropTypes.string,
-  }),
+  issue: GithubPropTypes.issue,
 };
 
 IssueDetail.defaultProps = { issue: null, show: false };

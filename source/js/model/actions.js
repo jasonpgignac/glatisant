@@ -3,7 +3,7 @@
 /*
  * action types
  */
-
+import fetch from 'isomorphic-fetch'
 export const REQUEST_ISSUES = 'REQUEST_ISSUES';
 export const RECEIVE_ISSUES = 'RECEIVE_ISSUES';
 /*
@@ -16,5 +16,20 @@ export function requestIssues(shouldForce) {
 }
 
 export function receiveIssues(issuesJson) {
-  return { type: RECEIVE_ISSUES, data: json.data };
+  return { type: RECEIVE_ISSUES, issues: issuesJson };
+}
+
+export function fetchIssues() {
+  return function(dispatch) {
+    dispatch(requestIssues());
+    
+    return fetch('https://api.github.com/repos/freeCodeCamp/freeCodeCamp/issues')
+      .then(
+        response => response.json().then(data => data),
+        error => console.log('An error occured.', error)
+      )
+      .then(json =>
+        dispatch(receiveIssues(json))
+      )
+  }
 }

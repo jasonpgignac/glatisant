@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { READ_ISSUES } from './actions'
+import { REQUEST_ISSUES, RECEIVE_ISSUES } from './actions'
 
 const issuesData = [
   {
@@ -18,11 +18,23 @@ const issuesData = [
   },
 ];
 
-function issues(state = [], action) {
+function issues(state = {
+  isFetching: false,
+  items: []
+}, action) {
   switch (action.type) {
     case REQUEST_ISSUES:
-      return issuesData;
-     default:
+      return Object.assign({}, state, {
+        isFetching: true,
+      });
+      
+    case RECEIVE_ISSUES:
+      return Object.assign({}, state, {
+        isFetching: false,
+        items: action.issues,
+      });
+    
+    default:
       return state;
   }
 }
