@@ -13,6 +13,11 @@ class IssuesTable extends React.PureComponent {
     super();
     this.state = { selectedIssue: null, showSelectedIssue: false };
   }
+
+  componentWillMount() {
+    this.props.readIssues();
+  }
+
   openIssue(id) {
     this.setState({
       selectedIssue: this.props.data.find(issue => issue.id === id),
@@ -57,7 +62,10 @@ IssuesTable.propTypes = {
     creator: PropTypes.string,
     status: PropTypes.string,
     summary: PropTypes.string,
-  })).isRequired,
+  })),
+  readIssues: PropTypes.func.isRequired,
 };
+
+IssuesTable.defaultProps = { data: [] };
 
 export default IssuesTable;
