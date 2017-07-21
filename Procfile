@@ -1,1 +1,1 @@
-web: webpack-dev-server --hot --inline
+web: npm start
