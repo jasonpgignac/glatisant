@@ -4,7 +4,7 @@ import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-import Logo from './components/Logo';
+import TitleBar from './components/TitleBar';
 import VisibleIssuesTable from './components/issues/VisibleIssuesTable';
 import GlatisantApp from './model/reducers';
 
@@ -13,10 +13,12 @@ require('../css/app.css');
 const store = createStore(GlatisantApp, applyMiddleware(thunkMiddleware));
 
 ReactDOM.render(
-  <h1>
-    <Logo />Welcome to Glatisant
-    <Provider store={store}>
-      <VisibleIssuesTable />
-    </Provider>
-  </h1>,
+  <div className="container">
+    <TitleBar />
+    <div id="main-body">
+      <Provider store={store}>
+        <VisibleIssuesTable />
+      </Provider>
+    </div>
+  </div>,
   document.getElementById('app'));

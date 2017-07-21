@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
+
+.Logo {
+    background-image: url('../../images/logo.jpg');
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    float: left;
+    display: block;
+}
+
+.logo-text {
+    line-height: 55px;
+    font-size: 75px;
+    font-family: 'Playfair Display SC', serif;
+}
+
+.logo-subtitle {
+    margin-left: 105px;
+}
+
+.navbar hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,28 @@
+.issue-detail-frame {
+    background-image: url("../../images/detail-background.jpg");
+    background-repeat: no-repeat;
+    padding-left: 150px;
+    padding-top: 115px;
+    width: 700px;
+    height: 978px;
+}
+
+.issue-detail-user {
+    position: absolute;
+    top: 130px;
+    right: 150px;
+    background: grey;
+    color: white;
+}
+
+.issue-detail {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 450px;
+    height: 610px;
+}
+
+.issue-detail-user-avatar {
+    height: 20px;
+    width: 20px;
+}

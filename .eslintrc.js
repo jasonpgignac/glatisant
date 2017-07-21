@@ -3,5 +3,7 @@ module.exports = {
   'globals': {
     'document': true,
     'window': true,
+    'DOMParser': true,
+    'NodeFilter': true,
   }
 };

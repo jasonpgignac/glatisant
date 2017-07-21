@@ -1,0 +1,8 @@
+.drop-cap {
+    float: left;
+    max-width: 150px;
+    max-height: 150px;
+}
+.remaining-body {
+    padding-top: 20px;
+}

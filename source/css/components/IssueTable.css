@@ -1,0 +1,11 @@
+.issueCreatorAvatar {
+   float: left;
+   height: 40px;
+   width: 40px;
+   margin-right: 10px;
+}
+
+.issue-list-entry-title {
+  font-size: 14pt;
+  font-weight: bold;
+}

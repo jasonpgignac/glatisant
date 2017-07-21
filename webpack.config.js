@@ -13,7 +13,7 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
-        extensions: ['.jsx', '.js', '.json', '.css', '.styl', '.jpg']
+        extensions: ['.jsx', '.js', '.json', '.css', '.styl', '.jpg', 'png']
     },
 
     module: {
@@ -26,7 +26,7 @@ module.exports = {
 
 			{ test: /\.styl$/, loader: "style-loader!css-loader!stylus-loader"},
 			
-			{ test: /\.jpg$/, loader: 'file-loader'},
+			{ test: [/\.jpg$/, /\.png$/], loader: 'file-loader'},
         ]
     },
     

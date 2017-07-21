@@ -1,4 +1,5 @@
-html {
-    background: white;
-    font: 16px Arial;
+#main-body {
+    border-left: 50px solid green;
+    border-image-source: url('../images/croppedTile.jpg');
+    border-image-width: 50px;
 }
