@@ -12,8 +12,8 @@ class IssueDetail extends React.PureComponent {
     let el = null;
     if (this.props.show && this.props.issue) {
       el = (
-        <ModalContainer onClose={this.handleClose}>
-          <ModalDialog onClose={this.handleClose}>
+        <ModalContainer onClose={this.props.didDismiss}>
+          <ModalDialog onClose={this.props.didDismiss}>
             <div className="issue-detail-frame">
               <div className="issue-detail">
                 <header>
@@ -48,6 +48,7 @@ class IssueDetail extends React.PureComponent {
 IssueDetail.propTypes = {
   show: PropTypes.bool,
   issue: GithubPropTypes.issue,
+  didDismiss: PropTypes.func.isRequired,
 };
 
 IssueDetail.defaultProps = { issue: null, show: false };

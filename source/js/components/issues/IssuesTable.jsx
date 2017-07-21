@@ -15,10 +15,15 @@ class IssuesTable extends React.PureComponent {
   constructor() {
     super();
     this.state = { selectedIssue: null, showSelectedIssue: false };
+    this.dismissModal = this.dismissModal.bind(this);
   }
 
   componentWillMount() {
     this.props.readIssues();
+  }
+
+  dismissModal() {
+    this.setState(Object.assign({}, this.state, { showSelectedIssue: false }));
   }
 
   openIssue(id) {
@@ -31,7 +36,11 @@ class IssuesTable extends React.PureComponent {
   render() {
     return (
       <div className="issues">
-        <IssueDetail issue={this.state.selectedIssue} show={this.state.showSelectedIssue} />
+        <IssueDetail
+          issue={this.state.selectedIssue}
+          show={this.state.showSelectedIssue}
+          didDismiss={this.dismissModal}
+        />
         {
           this.props.data.map(issue => (
             <section className="panel panel-default issue-list-entry" key={`Issue-${issue.id}`}>
