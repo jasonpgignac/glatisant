@@ -5,7 +5,7 @@ console.log("Serving from", __dirname + '/dist');
 var fs = require("fs"),
     path = require("path");
 
-var p = __dirname;
+var p = __dirname + '/dist';
 
 fs.readdir(p, function (err, files) {
     if (err) {
