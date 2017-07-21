@@ -4,7 +4,8 @@
   "description": "Questing App for use to encourage engagement with github repositories",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./webpack-prod-config.js --progress --colors"
+    "build": "webpack --config ./webpack-prod-config.js --progress --colors",
+    "start": "webpack-dev-server --hot --inline"
   },
   "repository": {
     "type": "git",
