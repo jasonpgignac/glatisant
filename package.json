@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack --config ./webpack-prod-config.js --colors",
     "start": "node ./server.js",
-    "postinstall": "npm run build"
+    "postinstall": "./node_modules/.bin/webpack --config ./webpack-prod-config.js --colors"
   },
   "repository": {
     "type": "git",
