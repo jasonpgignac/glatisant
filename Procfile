@@ -1,1 +1,1 @@
-webpack-dev-server --hot --inline
+web: webpack-dev-server --hot --inline
