@@ -1,4 +1,4 @@
-//import path from 'path';
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './source/js/app.jsx',
@@ -6,14 +6,14 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: __dirname + '/dist',
-        publicPath: '/dist'
+        publicPath: '/'
     },
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
     resolve: {
-        extensions: ['.jsx', '.js', '.json', '.css', '.styl', '.jpg', 'png']
+        extensions: ['.jsx', '.js', '.json', '.css', '.styl', '.jpg', 'png', 'html', 'htm']
     },
 
     module: {
@@ -29,4 +29,9 @@ module.exports = {
 			{ test: [/\.jpg$/, /\.png$/], loader: 'file-loader'},
         ]
     },
+    plugins: [new HtmlWebpackPlugin({
+        title: 'Glatisant',
+        filename: 'index.html',
+        template: 'index.ejs'
+    })]
 };
