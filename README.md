@@ -46,6 +46,9 @@ better tested.
 4) Should be tested over a wider range of possible inputs than it currently is.
 5) If the username is exceptionally long, there are several places that we could
 get display bugs
+6) Description text renders with visible formatting characters on the list. We
+would need to decide how to handle this (rendering the md can make the page very
+messy, excising the formatting characters can make it illegible)
 
 ##NEXT STEPS##
 1) Auth
