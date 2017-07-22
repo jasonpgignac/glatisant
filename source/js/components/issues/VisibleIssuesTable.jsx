@@ -2,10 +2,17 @@ import { connect } from 'react-redux';
 import IssuesTable from './IssuesTable';
 import { fetchIssues } from '../../model/actions';
 
-const mapStateToProps = state => ({ data: state.issues.items });
+const mapStateToProps = (state) => {
+  const props = {
+    data: state.issues.items,
+    pageNumber: state.issues.pageNumber,
+    pageCount: state.issues.lastPageNumber,
+  };
+  return props;
+};
 
 const mapDispatchToProps = dispatch => ({
-  readIssues: () => { dispatch(fetchIssues()); },
+  readIssues: (pageNumber) => { dispatch(fetchIssues(pageNumber + 1)); },
 });
 
 const VisibleIssuesTable = connect(mapStateToProps, mapDispatchToProps)(IssuesTable);

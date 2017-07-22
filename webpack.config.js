@@ -18,9 +18,9 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.js?$/, exclude: /node_modules/, loader: 'eslint-loader', enforce: 'pre', options: { emitError: true, emitWarning: false } },
+            { test: /\.js.?$/, exclude: /node_modules/, loader: 'eslint-loader', enforce: 'pre', options: { emitError: true, emitWarning: false } },
 
-            { test: /\.js?$/, exclude: /node_modules/, loader: 'babel-loader', options: { presets:['es2015', 'react'] } },
+            { test: /\.js.?$/, exclude: /node_modules/, loader: 'babel-loader', options: { presets:['es2015', 'react'] } },
             
             { test: /\.css$/, loader: "style-loader!css-loader" },
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactPaginate from 'react-paginate';
+
 import IssueDetail from './IssueDetail';
 import GithubPropTypes from '../../githubPropTypes';
 
@@ -13,12 +15,13 @@ function truncateField(field, length) {
 class IssuesTable extends React.PureComponent {
   constructor() {
     super();
-    this.state = { selectedIssue: null, showSelectedIssue: false };
+    this.state = { selectedIssue: null, showSelectedIssue: false, pageNumber: 1 };
     this.dismissModal = this.dismissModal.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
   componentWillMount() {
-    this.props.readIssues();
+    this.props.readIssues(this.state.pageNumber);
   }
 
   dismissModal() {
@@ -30,6 +33,12 @@ class IssuesTable extends React.PureComponent {
       selectedIssue: this.props.data.find(issue => issue.id === id),
       showSelectedIssue: true,
     });
+  }
+
+  handlePageClick(data) {
+    console.log('Pagination Data', data);
+    this.setState({ pageNumber: data.selected });
+    this.props.readIssues(this.state.pageNumber);
   }
 
   render() {
@@ -66,6 +75,16 @@ class IssuesTable extends React.PureComponent {
             </section>
           ))
         }
+        <ReactPaginate
+          pageCount={this.props.pageCount}
+          marginPagesDisplayed={0}
+          pageRangeDisplayed={5}
+          onPageChange={this.handlePageClick}
+          containerClassName="pagination"
+          activeClassName="active"
+          subContainerClassName="pages pagination"
+          breakClassName="disabled"
+        />
       </div>
     );
   }
@@ -74,6 +93,7 @@ class IssuesTable extends React.PureComponent {
 IssuesTable.propTypes = {
   data: PropTypes.arrayOf(GithubPropTypes.issue),
   readIssues: PropTypes.func.isRequired,
+  pageCount: PropTypes.number.isRequired,
 };
 
 IssuesTable.defaultProps = { data: [] };

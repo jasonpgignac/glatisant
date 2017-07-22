@@ -4,6 +4,8 @@ import { REQUEST_ISSUES, RECEIVE_ISSUES } from './actions';
 function issues(state = {
   isFetching: false,
   items: [],
+  pageNumber: 1,
+  lastPageNumber: 1,
 }, action) {
   switch (action.type) {
     case REQUEST_ISSUES:
@@ -16,6 +18,7 @@ function issues(state = {
         isFetching: false,
         items: action.issues,
         pageNumber: action.pageNumber,
+        lastPageNumber: action.lastPageNumber,
       });
 
     default:
