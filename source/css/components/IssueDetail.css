@@ -7,12 +7,10 @@
     height: 978px;
 }
 
-.issue-detail-user {
+.issue-detail-labels {
     position: absolute;
     top: 130px;
     right: 150px;
-    background: grey;
-    color: white;
 }
 
 .issue-detail {
@@ -23,6 +21,12 @@
 }
 
 .issue-detail-user-avatar {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.issue-detail-label {
+    margin-right: 5px;
 }

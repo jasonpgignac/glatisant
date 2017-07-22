@@ -10,7 +10,7 @@ const issue = PropTypes.shape({
   user,
   title: PropTypes.string,
   creator: PropTypes.string,
-  status: PropTypes.string,
+  state: PropTypes.string,
   body: PropTypes.string,
 });
 

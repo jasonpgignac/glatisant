@@ -10,7 +10,6 @@ function truncateField(field, length) {
                                 : `${field.substr(0, length).trim()}...`;
 }
 
-
 class IssuesTable extends React.PureComponent {
   constructor() {
     super();
@@ -50,9 +49,13 @@ class IssuesTable extends React.PureComponent {
                 onClick={() => this.openIssue(issue.id)}
                 tabIndex="-1"
               >
-                <span className="issue-list-entry-title">{issue.title} </span>
-                <small>({issue.id})</small>
-                {/* <div>{issue.status}</div> */}
+                <div className="row">
+                  <div className="issue-list-entry-heading col-md-10">
+                    <span className="issue-list-entry-title">{issue.title} </span>
+                    <small>({issue.id})</small>
+                  </div>
+                  <div className="issue-list-entry-state col-md-2">{issue.state}</div>
+                </div>
               </div>
               <div className="issue-summary panel-body">
                 <p>

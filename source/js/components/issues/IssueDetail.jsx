@@ -17,14 +17,17 @@ class IssueDetail extends React.PureComponent {
             <div className="issue-detail-frame">
               <div className="issue-detail">
                 <header>
-                  <section className="issue-detail-user">
-                    <span className="label">Creator</span>
-                    <img
-                      className="issue-detail-user-avatar"
-                      src={this.props.issue.user.avatar_url}
-                      alt={`Avatar for user ${this.props.issue.user.login}`}
-                    />
-                    { this.props.issue.user.login }
+                  <section className="issue-detail-labels">
+                    <div className="issue-detail-user label label-default issue-detail-label">
+                      <span className="label">Creator</span>
+                      <img
+                        className="issue-detail-user-avatar"
+                        src={this.props.issue.user.avatar_url}
+                        alt={`Avatar for user ${this.props.issue.user.login}`}
+                      />
+                      { this.props.issue.user.login }
+                    </div>
+                    <div className="label label-default issue-detail-label">{this.props.issue.state}</div>
                   </section>
                   <h1>{this.props.issue.id}:{this.props.issue.title}</h1>
                 </header>
