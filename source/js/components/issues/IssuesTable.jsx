@@ -36,7 +36,6 @@ class IssuesTable extends React.PureComponent {
   }
 
   handlePageClick(data) {
-    console.log('Pagination Data', data);
     this.setState({ pageNumber: data.selected });
     this.props.readIssues(this.state.pageNumber);
   }
