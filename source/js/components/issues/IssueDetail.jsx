@@ -27,7 +27,9 @@ class IssueDetail extends React.PureComponent {
                       />
                       { this.props.issue.user.login }
                     </div>
-                    <div className="label label-default issue-detail-label">{this.props.issue.state}</div>
+                    <div className="label label-default issue-detail-label">
+                      {this.props.issue.state}
+                    </div>
                   </section>
                   <h1>{this.props.issue.id}:{this.props.issue.title}</h1>
                 </header>

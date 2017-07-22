@@ -32,6 +32,7 @@ function issues(state = {
       return Object.assign({}, state, {
         isFetching: false,
         items: action.issues,
+        pageNumber: action.pageNumber
       });
     
     default:
